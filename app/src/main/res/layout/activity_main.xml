@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="port, >= 1024"
+        android:text="1081"
         android:maxLength="5"
         android:inputType="number"
         android:layout_marginTop="50dp"
@@ -21,14 +22,35 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <CheckBox
+        android:id="@+id/cbUseSystemProxy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="use system proxy as next socks proxy"
+        android:checked="true"
+        app:layout_constraintTop_toBottomOf="@id/etPort"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
     <Button
         android:id="@+id/btnStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnStop"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/cbUseSystemProxy" />
+
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnStart"
+        app:layout_constraintTop_toTopOf="@id/btnStart" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
